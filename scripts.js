@@ -33,26 +33,29 @@ function init(){
         }
     }
 
+    let x = 0;
+    let heightCounter = 0;
+
     leftButton.onclick = moveRocketImageLeft;
     function moveRocketImageLeft(){
-       document.getElementById("rocket").style.paddingLeft = "10px";
+       document.getElementById("rocket").style.transform = `translate(${x -= 10}px)`;
     }
 
     rightButton.onclick = moveRocketImageRight;
     function moveRocketImageRight(){
-       document.getElementById("rocket").style.paddingRight = "10px";
+       document.getElementById("rocket").style.transform = `translate(${x += 10}px)`;
     }
 
     upButton.onclick = moveRocketImageUp;
     function moveRocketImageUp(){
-       document.getElementById("rocket").style.paddingBottom = "10px";
-       document.getElementById("spaceShuttleHeight").innerHTML = 10000;
+       document.getElementById("rocket").style.transform = `translate(0px, ${x -= 10}px)`;
+       document.getElementById("spaceShuttleHeight").innerHTML = `${heightCounter += 10000}`;
     }
 
-    downButton.onclick = moveRocketImageBottom;
-    function moveRocketImageBottom(){
-       document.getElementById("rocket").style.paddingTop = "10px";
-       document.getElementById("spaceShuttleHeight").innerHTML = 0;
+    downButton.onclick = moveRocketImageDown;
+    function moveRocketImageDown(){
+       document.getElementById("rocket").style.transform = `translate(0px, ${x += 10}px)`;
+       document.getElementById("spaceShuttleHeight").innerHTML = `${heightCounter -= 10000}`;
     }
 
 }
