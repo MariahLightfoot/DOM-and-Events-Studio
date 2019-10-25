@@ -5,3 +5,7 @@
     width: 40%;
 }
 
+img{
+    position: relative;
+    top: 250px;
+}
